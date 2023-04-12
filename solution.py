@@ -9,7 +9,7 @@ def solution(x: np.array, y: np.array) -> bool: # Одна или две выб�
     p_value = sps.permutation_test((x, y), lambda x, y, axis: np.mean(x, axis=axis) - np.mean(y, axis=axis),
                                    vectorized=True,
                                    n_resamples=5000,
-                                   alternative='greater').pvalue
+                                   alternative='less').pvalue
     alpha = 0.05
     # Измените код этой функции
     # Это будет вашим решением
